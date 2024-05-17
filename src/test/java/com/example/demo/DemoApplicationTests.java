@@ -27,4 +27,12 @@ class DemoApplicationTests {
 
 	}
 
+	@Test
+	public void getCityListTest() throws Exception {
+
+		System.out.println("" + cityServer.getCityList(2, 10));
+		
+
+	}
+
 }
