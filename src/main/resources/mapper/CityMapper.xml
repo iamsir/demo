@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.CityDao">
+    <select id='getCity' parameterType="City" resultType='City'>
+        select * from city where 1=1 
+        <if test= "id != null">
+            and id= #{id}
+        </if>
+        <if test= "name != null and name != ''">
+            and name= #{name}
+        </if>
+        <!--
+        <if test= "countryCode != null and countryCode != ''">
+            and countryCode= #{countryCode}
+        </if>
+        <if test= "district != null and district != ''">
+            and district= #{district}
+        </if>
+        <if test= "population != null and population != ''">
+            and population= #{population}
+        </if> -->
+    </select>
+
+    <!-- getCityList --> 
+    <select id="getCityList" resultType='City'>
+        select * from city 
+    </select>
+    
+</mapper>
