@@ -10,5 +10,5 @@ import com.example.demo.entity.City;
 public interface CityDao {
     public City getCity(City city);
 
-    public List<City> getCityList(Integer pageNum, Integer pageSize);
+    public List<City> getCityList(City city);
 }

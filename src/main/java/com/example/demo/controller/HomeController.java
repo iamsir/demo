@@ -39,9 +39,11 @@ public class HomeController {
         
     }
 
-    @GetMapping("/cityList/{pageNum}/{pageSize}")
-    public PageInfo<City> getCityList(@PathVariable(value = "pageNum") Integer pageNum, @PathVariable(value = "pageSize") Integer pageSize) {
-        return cityServer.getCityList(pageNum, pageSize);
+    @GetMapping("/cityList/{name}/{pageNum}/{pageSize}")
+    public PageInfo<City> getCityList(@PathVariable(value = "name") String name, @PathVariable(value = "pageNum") Integer pageNum, @PathVariable(value = "pageSize") Integer pageSize) {
+        City city = new City();
+        city.setName(name); 
+        return cityServer.getCityList(city, pageNum, pageSize);
         
     }
 

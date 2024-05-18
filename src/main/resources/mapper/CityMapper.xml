@@ -24,8 +24,14 @@
     </select>
 
     <!-- getCityList --> 
-    <select id="getCityList" resultType='City'>
-        select * from city 
+    <select id="getCityList" parameterType="City" resultType='City'>
+        select * from city where 1=1 
+        <if test= "id != null">
+            and id= #{id}
+        </if>
+        <if test= "name != null and name != ''">
+            and name like "%"#{name}"%"
+        </if>
     </select>
     
 </mapper>

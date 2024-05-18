@@ -18,9 +18,9 @@ public class CityServer {
         return cityDao.getCity(city);
     }
 
-    public PageInfo<City> getCityList(Integer pageNum, Integer pageSize) {
+    public PageInfo<City> getCityList(City city, Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
-        return new PageInfo<>(cityDao.getCityList(pageNum, pageSize));
+        return new PageInfo<>(cityDao.getCityList(city));
     }
     
 }
